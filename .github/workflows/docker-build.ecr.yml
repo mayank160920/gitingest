@@ -37,7 +37,7 @@ jobs:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
 
       - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: ${{ secrets.CODERAMP_AWS_ECR_REGISTRY_PUSH_ROLE_ARN }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
